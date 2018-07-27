@@ -1,4 +1,5 @@
 class Task
+  
   def initialize
     @description = description
     @due_date = due_date
@@ -22,6 +23,19 @@ class Task
 
 end
 
+class TodoList
+  @@list = []
+  def initialize
+    @@list = list
+  end
+
+  def self.list
+    Task.new >> list
+    return list
+  end
+
+end
+
 water_plants = Task.new
 water_plants.description = "Water plants in backyard"
 
@@ -34,3 +48,6 @@ go_to_bathroom.due_date = "Right now".upcase
 p water_plants
 p "I have to feed my cat by #{feed_cat.due_date}"
 p "I have to go to the bathroom #{go_to_bathroom.due_date}"
+
+
+p TodoList.list
